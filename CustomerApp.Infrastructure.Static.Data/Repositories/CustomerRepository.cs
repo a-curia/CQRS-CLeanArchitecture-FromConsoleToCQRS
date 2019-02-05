@@ -7,11 +7,26 @@ namespace CustomerApp.Infrastructure.Static.Data.Repositories
     public class CustomerRepository: ICustomerRepository
     {
 
-        static int id = 1;
-        private List<Customer> _customers = new List<Customer>();
-
         public CustomerRepository()
         {
+            if (FakeDB.Customers.Count >= 1) return;
+
+
+            var cust1 = new Customer()
+            {
+                FirstName = "Bob",
+                LastName = "Dylan",
+                Address = "BongoStreet 202"
+            };
+            FakeDB.Customers.Add(cust1);
+
+            var cust2 = new Customer()
+            {
+                FirstName = "Lars",
+                LastName = "Bilde",
+                Address = "Ostestrasse 202"
+            };
+            FakeDB.Customers.Add(cust2);
         }
 
         public Customer Create(Customer customer)

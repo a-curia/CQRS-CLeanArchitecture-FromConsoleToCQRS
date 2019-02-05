@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{CC9B36E6-5409-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerApp.Infrastructure.Static.Data", "CustomerApp.Infrastructure.Static.Data\CustomerApp.Infrastructure.Static.Data.csproj", "{B87529AA-B224-4E7A-B6A9-4B46C1198111}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerRestApi", "CustomerRestApi\CustomerRestApi.csproj", "{453D8262-667B-4398-AD3C-54A2AB44763D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B87529AA-B224-4E7A-B6A9-4B46C1198111}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B87529AA-B224-4E7A-B6A9-4B46C1198111}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B87529AA-B224-4E7A-B6A9-4B46C1198111}.Release|Any CPU.Build.0 = Release|Any CPU
+		{453D8262-667B-4398-AD3C-54A2AB44763D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{453D8262-667B-4398-AD3C-54A2AB44763D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{453D8262-667B-4398-AD3C-54A2AB44763D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{453D8262-667B-4398-AD3C-54A2AB44763D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{AC506F31-17CC-47D9-B102-EC15BB065015} = {8835E9C2-53F0-4CA4-B7AB-646E0990F061}
 		{3F31E80F-F7A8-4F1F-B53B-FAF67B079D3C} = {8835E9C2-53F0-4CA4-B7AB-646E0990F061}
 		{B87529AA-B224-4E7A-B6A9-4B46C1198111} = {8138CA07-126A-4126-857E-871ABA114D07}
+		{453D8262-667B-4398-AD3C-54A2AB44763D} = {CC9B36E6-5409-41BF-964C-CC701C9D7986}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DD3B0FE-A11C-41DE-9680-260A42A50F47}
