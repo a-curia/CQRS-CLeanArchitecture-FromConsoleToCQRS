@@ -14,6 +14,7 @@ namespace CustomerApp.Infrastructure.Static.Data.Repositories
 
             var cust1 = new Customer()
             {
+                Id = FakeDB.Customers.Count+1,
                 FirstName = "Bob",
                 LastName = "Dylan",
                 Address = "BongoStreet 202"
@@ -22,6 +23,7 @@ namespace CustomerApp.Infrastructure.Static.Data.Repositories
 
             var cust2 = new Customer()
             {
+                Id = FakeDB.Customers.Count + 1,
                 FirstName = "Lars",
                 LastName = "Bilde",
                 Address = "Ostestrasse 202"
@@ -31,20 +33,20 @@ namespace CustomerApp.Infrastructure.Static.Data.Repositories
 
         public Customer Create(Customer customer)
         {
-            customer.Id = id++;
-            _customers.Add(customer);
+            customer.Id = FakeDB.Id++;
+            FakeDB.Customers.Add(customer);
 
             return customer;
         }
 
         public IEnumerable<Customer> ReadAll()
         {
-            return _customers;
+            return FakeDB.Customers;
         }
 
         public Customer ReadById(int id)
         {
-            foreach (var customer in _customers)
+            foreach (var customer in FakeDB.Customers)
             {
                 if (customer.Id == id)
                 {
@@ -78,7 +80,7 @@ namespace CustomerApp.Infrastructure.Static.Data.Repositories
 
             if (customerFound != null)
             {
-                _customers.Remove(customerFound);
+                FakeDB.Customers.Remove(customerFound);
 
                 return customerFound;
             }

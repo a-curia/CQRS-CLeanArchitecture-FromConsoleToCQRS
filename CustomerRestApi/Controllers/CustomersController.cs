@@ -31,27 +31,44 @@ namespace CustomerRestApi.Controllers
 
         // GET api/customers/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<Customer> Get(int id)
         {
-            return "value";
+            return _customerService.FindCustomerById(id);
         }
 
         // POST api/customers
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult<Customer> Post([FromBody] Customer customer)
         {
+            if (string.IsNullOrEmpty(customer.FirstName))
+            {
+                return BadRequest("Firstname is Required for Creating Customer");
+            }
+
+            //return Ok("Customer saved");
+            return _customerService.CreateCustomer(customer);
         }
 
         // PUT api/customers/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public ActionResult<Customer> Put(int id, [FromBody] Customer customer)
         {
+            if (id < 1 || id != customer.Id)
+            {
+                BadRequest("Id's does not match!");
+            }
+
+            _customerService.UpdateCustomer(customer);
+
+            return Ok();
+
         }
 
         // DELETE api/customers/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            _customerService.DeleteCustomer(id);
         }
     }
 }
